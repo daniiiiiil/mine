@@ -93,16 +93,16 @@ class Mapmanager():
 
     def saveMap(self):
         block = self.land.getChildren()
-        with open('my_map.dat', 'wb') af fout:
+        with open('my_map.dat', 'wb') as fout:
             pickle.dump(len(blocks), fout)
             for block in blocks:
                 x, y, z = block.getPos()
                 pos =  (int(x), int(y), int(z))
-                pickle.dump(pos,, fout)
+                pickle.dump(pos, fout)
     
     def loadMap(self):
         self.clear()
-        with open('my_map.dat', 'wb') af fin:
+        with open('my_map.dat', 'wb') as fin:
             lenght = pickle.load(fin)
             for i in range(length):
                 pos = pickle.load(fin)
